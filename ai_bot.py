@@ -67,7 +67,7 @@ def init_chat_history():
     chat_history.clear()
     system_role = {
         "role": "system",
-        "content": "あなたは現在新車販売されている国産車、輸入車の情報に精通しています。今から言うキーワードに合致する車種を5種程度、簡単な説明と共に紹介してください。ディーラーの担当者らしく丁寧な話し方を意識してください。",
+        "content": "あなたは現在新車販売されている国産車、輸入車の情報に精通しています。今から言うキーワードに合致する車種を5種程度、前置きなしで提示してください。",
     }
     chat_history.append(system_role)
 
@@ -89,7 +89,7 @@ def get_ai_response(from_user, text):
     # AIのパラメータ
     parameters = {
         "model": azure_openai_model,  # AIモデル
-        "max_tokens": 100,  # 返信メッセージの最大トークン数
+        "max_tokens": 1000,  # 返信メッセージの最大トークン数
         "temperature": 0.5,  # 生成の多様性（0: 最も確実な回答、1: 最も多様な回答）
         "frequency_penalty": 0,  # 同じ単語を繰り返す頻度（0: 小さい）
         "presence_penalty": 0,  # すでに生成した単語を再度生成する頻度（0: 小さい）
