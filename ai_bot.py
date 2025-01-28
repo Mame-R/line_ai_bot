@@ -67,7 +67,7 @@ def init_chat_history():
     chat_history.clear()
     system_role = {
         "role": "system",
-        "content": "あなたは現在新車販売されている国産車、輸入車の情報に精通しています。今から言うキーワードに合致する車種を5種程度、前置きなしで提示してください。",
+        "content": "あなたは現在新車販売されている国産車、輸入車の情報に精通しています。今から言うキーワードに合致する具体的な車種を5つ、前置きなしで提示してください。",
     }
     chat_history.append(system_role)
 
